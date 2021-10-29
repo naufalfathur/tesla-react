@@ -1,10 +1,11 @@
 import React from "react";
-import { View, Text, ImageBackground } from "react-native";
+import { View, Text, ImageBackground, Button } from "react-native";
 import styles from "./style";
 import StyledButton from "../StyledButton";
 
 const CarItem = (props) => {
   const { name, tagline, image, taglineCTA } = props.car;
+  const nav = props.nav;
 
   return (
     <View style={styles.carContainer}>
@@ -22,7 +23,7 @@ const CarItem = (props) => {
           type="primary"
           content={"Custom Order"}
           onPress={() => {
-            console.warn("Custom Order");
+            nav.navigate('CustomOrder');
           }}
         />
 
@@ -30,10 +31,11 @@ const CarItem = (props) => {
           type="secondary"
           content={"Existing Inventory"}
           onPress={() => {
-            console.warn("Existing Inventory");
+            nav.navigate('ExistingInventory');
           }}
         />
       </View>
+      
     </View>
   );
 };

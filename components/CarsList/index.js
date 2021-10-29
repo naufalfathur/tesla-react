@@ -5,11 +5,13 @@ import styles from "./styles";
 import cars from "./cars";
 
 const CarsList = (props) => {
+  const nav = props.nav;
+  
   return (
     <View style={styles.container}>
       <FlatList
           data={cars}
-          renderItem={({item}) => <CarItem car={item}/> }
+          renderItem={({item}) => <CarItem car={item} nav={nav}/> }
           snapToAlignment={'start'}
           decelerationRate={'fast'}
           snapToInterval={Dimensions.get('window').height}
